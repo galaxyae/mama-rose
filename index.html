@@ -31,7 +31,6 @@
         <meta name="twitter:site" content="@fuekothemes" />
         <meta property="og:image:width" content="720" />
         <meta property="og:image:height" content="1080" />
-
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
@@ -61,8 +60,48 @@
         </script>
         <link rel="stylesheet" href="content/stars.css" />
         <link rel="stylesheet" href="content/fireflies.css" />
+        <link rel="stylesheet" href="content/testimonials.css" />
         <script defer src="https://unpkg.com/@tryghost/portal@~0.14.0/umd/portal.min.js" data-ghost="https://nurui-dark.fueko.net/"></script>
         <style>
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #010712;/* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #010712;;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
             .gh-post-upgrade-cta-content,
             .gh-post-upgrade-cta {
                 display: flex;
@@ -135,6 +174,278 @@
     <body
         class="home-template global-hash-blue global-hash-dark-version global-hash-details-goldenrod global-hash-full-image global-hash-green global-hash-large global-hash-login-panel-disable global-hash-orange global-hash-post-orange global-hash-post-violet global-hash-red global-hash-violet global-hash-yellow"
     >
+    <style media="screen">
+    :root  {
+      --primary-color: #FCFDFD;
+      --secondary-color: #818386;
+      --bg-color: #010712;
+      --button-color: #818386;
+      --h1-color: #FCFDFD;
+    }
+.contact-container {
+display: flex;
+width: 100%;
+height: 100%;
+background: var(--bg-color);
+}
+
+.left-col {
+width: 45%;
+height: 100%;
+background-image: url("https://images.pexels.com/photos/931018/pexels-photo-931018.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.logo {
+width: 100%;
+padding: 1.5rem;
+}
+
+.right-col {
+background: var(--bg-color);
+width: 50vw;
+height: 50%;
+padding: 5rem 3.5rem;
+}
+
+h1, label, button, .description {
+font-weight: 400;
+letter-spacing: 0.1rem;
+}
+
+h1 {
+color:var(--h1-color);
+text-transform: uppercase;
+font-size: 2.5rem;
+letter-spacing: 0.5rem;
+font-weight: 300;
+}
+
+p {
+color: var(--secondary-color);
+font-size: 0.9rem;
+letter-spacing: 0.01rem;
+width: 40vw;
+margin: 0.25rem 0;
+}
+
+label, .description {
+color: var(--secondary-color);
+text-transform: uppercase;
+font-size: 0.625rem;
+}
+
+form {
+width: 31.25rem;
+position: relative;
+margin-top: 2rem;
+padding: 1rem 0;
+}
+
+input, textarea, label {
+width: 40vw;
+display: block;
+}
+
+placeholder, input, textarea {
+font-family: 'Helvetica Neue', sans-serif;
+}
+
+input::placeholder, textarea::placeholder {
+color: var(--primary-color);
+}
+
+input, textarea {
+color: var(--primary-color);
+font-weight: 500;
+background: var(--bg-color);
+border: none;
+border-bottom: 1px solid var(--secondary-color);
+padding: 0.5rem 0;
+margin-bottom: 1rem;
+outline: none;
+}
+
+textarea {
+resize: none;
+}
+
+button {
+text-transform: uppercase;
+font-weight: 300;
+background: var(--button-color);
+color: var(--bg-color);
+width: 10rem;
+height: 2.25rem;
+border: none;
+border-radius: 2px;
+outline: none;
+cursor: pointer;
+}
+
+input:hover, textarea:hover, button:hover {
+opacity: 0.5;
+}
+
+button:active {
+opacity: 0.8;
+}
+
+/* Toggle Switch */
+
+.theme-switch-wrapper {
+display: flex;
+align-items: center;
+text-align: center;
+width: 160px;
+position: absolute;
+top: 0.5rem;
+right: 0;
+}
+
+.description {
+  margin-left: 1.25rem;
+}
+
+.theme-switch {
+display: inline-block;
+height: 34px;
+position: relative;
+width: 60px;
+}
+
+.theme-switch input {
+display:none;
+}
+
+.slider {
+background-color: #ccc;
+bottom: 0;
+cursor: pointer;
+left: 0;
+position: absolute;
+right: 0;
+top: 0;
+transition: .4s;
+}
+
+.slider:before {
+background-color: #fff;
+bottom: 0.25rem;
+content: "";
+width: 26px;
+height: 26px;
+left: 0.25rem;
+position: absolute;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color: var(--button-color);
+}
+
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+
+#error, #success-msg {
+width: 40vw;
+margin: 0.125rem 0;
+font-size: 0.75rem;
+text-transform: uppercase;
+font-family: 'Jost';
+color: var(--secondary-color);
+}
+}
+
+#success-msg {
+transition-delay: 3s;
+}
+
+@media only screen and (max-width: 950px) {
+.logo {
+  width: 8rem;
+}
+h1 {
+  font-size: 1.75rem;
+}
+p {
+  font-size: 0.7rem;
+}
+input, textarea, button {
+  font-size: 0.65rem;
+}
+.description {
+  font-size: 0.3rem;
+  margin-left: 0.4rem;
+}
+button {
+  width: 7rem;
+}
+.theme-switch-wrapper {
+  width: 120px;
+}
+.theme-switch {
+height: 28px;
+width: 50px;
+}
+
+.theme-switch input {
+display:none;
+}
+
+.slider:before {
+background-color: #fff;
+bottom: 0.25rem;
+content: "";
+width: 20px;
+height: 20px;
+left: 0.25rem;
+position: absolute;
+transition: .4s;
+}
+input:checked + .slider:before {
+transform: translateX(16px);
+}
+
+.slider.round {
+border-radius: 15px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+
+}
+    </style>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="contact-container">
+          <div class="left-col">
+            <img class="logo" src="content/images/2019/09/logo.svg"/>
+          </div>
+          <div class="right-col">
+            <h3>Contact us</h3>
+            <p><a href="tel:+27 (65) 564-2667"><i class="fa fa-phone my-float"></i> +27 (65) 564-2667 </a>
+            </p><p><a href="https://api.whatsapp.com/send?phone=+27(65)564-2667." target="_blank">
+                <i class="fa fa-whatsapp my-float"></i> +27 (65) 564-2667
+            </a></p>
+            <div id="error"></div>
+        <div id="success-msg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
         <div class="global-wrap">
             <div class="section-content-wrap">
                 <div class="section-header wrap">
@@ -162,7 +473,7 @@
                                         <span class="nav-dot"></span>
                                     </li>
                                     <li class="nav-list-item">
-                                        <a href="#" class="nav-link">Contact</a>
+                                        <a href="#" class="nav-link myBtn">Contact</a>
                                         <span class="nav-dot"></span>
                                     </li>
                                     <li class="nav-dots">
@@ -284,7 +595,7 @@
                     }
                 </style>
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-                <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+                <a href="https://api.whatsapp.com/send?phone=+27(65)564-2667." class="float" target="_blank">
                     <i class="fa fa-whatsapp my-float"></i>
                 </a>
 
@@ -463,14 +774,172 @@ family, friends, coworkers—who throw a proverbial wrench in the works.</p>
                         </div>
                     </div>
                 </div>
-                <div class="section-load-more">
-                    <div class="load-more">
-                        <span>Load more</span>
-                    </div>
-                </div>
-                <nav class="section-pagination pagination">
-                    <a class="older-posts" href="#">Older Posts</a>
-                </nav>
+
+                <style media="screen">
+                    body {
+                      width: 100%;
+                      height: auto;
+                      font-size: 14px;
+                    /*     font-family: Dubai-Light; */
+                    }
+                </style>
+                <div class="container">
+                  <section id="testim" class="testim">
+                           <div class="testim-cover">
+                              <div class="wrap">
+
+                                  <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+                                  <span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
+                                  <ul id="testim-dots" class="dots">
+                                      <li class="dot active"></li><!--
+                                      --><li class="dot"></li><!--
+                                      --><li class="dot"></li><!--
+                                      --><li class="dot"></li>
+                                  </ul>
+                                  <div id="testim-content" class="cont">
+
+                                      <div class="active">
+                                          <div class="img"><img src="content/images/testim1.jpeg" alt=""></div>
+                                          <h2>Faith Amba</h2>
+                                          <p>Am faith amba am South African raised in soweto married to mr amba joseph South African as well the reason as why I have mention all above is that i truely testify that  Louis de great . Is a true and honest healing tradition healer with magic miracles that truely healed our hearts me and my husband, we had a textile company which we owned for good years in Vaal it offered jobs and supplied country wired and we were good leaved,a beautiful life with our family but all over suddenly our company started declining in servicing we took loans to empower it again so that we run it as it was but it really n honestly failed us it realy brought a financial crisis btw us coz we lost all want we had in loans n brought disturbs btw us we could have fights at home that later brought separation btw us leaving me a single mother n my husband with no family support, my husband later flu out of Sa looking also for a living but later I also came here doughting but having a heart of trying to bring my life again we’re I came across many healers but I choose dr Louis de great who helped n brought my life back to normal they were many things he checked n sow that made us go wrong n I had to put my faith at once n did as traditional instructed us with many that I won’t be able to mention here but to cut the story short I got my husband n bussiness back we now protected n wealthy with prove you can email on  faithaber231@gmail.com..because I can’t put my contact here for personal reasons as a mother and wife.</p>
+                                      </div>
+
+                                      <div>
+                                          <div class="img"><img src="content/images/testim2.jpeg" alt=""></div>
+                                          <h2>-</h2>
+                                          <p>-</p>
+                                      </div>
+
+                                      <div>
+                                          <div class="img"><img src="content/images/testim3.jpeg" alt=""></div>
+                                          <h2>-</h2>
+                                          <p>-</p>
+                                      </div>
+
+                                      <div>
+                                          <div class="img"><img src="content/images/testim4.jpeg" alt=""></div>
+                                          <h2>-</h2>
+                                          <p>-</p>
+                                      </div>
+                                  </div>
+
+                              </div>
+                           </div>
+                      </section>
+                  </div>
+                  <script type="text/javascript">
+                  // vars
+                    'use strict'
+                    var	testim = document.getElementById("testim"),
+                      testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
+                      testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
+                      testimLeftArrow = document.getElementById("left-arrow"),
+                      testimRightArrow = document.getElementById("right-arrow"),
+                      testimSpeed = 20000,
+                      currentSlide = 0,
+                      currentActive = 0,
+                      testimTimer,
+                      touchStartPos,
+                      touchEndPos,
+                      touchPosDiff,
+                      ignoreTouch = 30;
+                    ;
+
+                    window.onload = function() {
+
+                      // Testim Script
+                      function playSlide(slide) {
+                          for (var k = 0; k < testimDots.length; k++) {
+                              testimContent[k].classList.remove("active");
+                              testimContent[k].classList.remove("inactive");
+                              testimDots[k].classList.remove("active");
+                          }
+
+                          if (slide < 0) {
+                              slide = currentSlide = testimContent.length-1;
+                          }
+
+                          if (slide > testimContent.length - 1) {
+                              slide = currentSlide = 0;
+                          }
+
+                          if (currentActive != currentSlide) {
+                              testimContent[currentActive].classList.add("inactive");
+                          }
+                          testimContent[slide].classList.add("active");
+                          testimDots[slide].classList.add("active");
+
+                          currentActive = currentSlide;
+
+                          clearTimeout(testimTimer);
+                          testimTimer = setTimeout(function() {
+                              playSlide(currentSlide += 1);
+                          }, testimSpeed)
+                      }
+
+                      testimLeftArrow.addEventListener("click", function() {
+                          playSlide(currentSlide -= 1);
+                      })
+
+                      testimRightArrow.addEventListener("click", function() {
+                          playSlide(currentSlide += 1);
+                      })
+
+                      for (var l = 0; l < testimDots.length; l++) {
+                          testimDots[l].addEventListener("click", function() {
+                              playSlide(currentSlide = testimDots.indexOf(this));
+                          })
+                      }
+
+                      playSlide(currentSlide);
+
+                      // keyboard shortcuts
+                      document.addEventListener("keyup", function(e) {
+                          switch (e.keyCode) {
+                              case 37:
+                                  testimLeftArrow.click();
+                                  break;
+
+                              case 39:
+                                  testimRightArrow.click();
+                                  break;
+
+                              case 39:
+                                  testimRightArrow.click();
+                                  break;
+
+                              default:
+                                  break;
+                          }
+                      })
+
+                      testim.addEventListener("touchstart", function(e) {
+                          touchStartPos = e.changedTouches[0].clientX;
+                      })
+
+                      testim.addEventListener("touchend", function(e) {
+                          touchEndPos = e.changedTouches[0].clientX;
+
+                          touchPosDiff = touchStartPos - touchEndPos;
+
+                          console.log(touchPosDiff);
+                          console.log(touchStartPos);
+                          console.log(touchEndPos);
+
+
+                          if (touchPosDiff > 0 + ignoreTouch) {
+                              testimLeftArrow.click();
+                          } else if (touchPosDiff < 0 - ignoreTouch) {
+                              testimRightArrow.click();
+                          } else {
+                            return;
+                          }
+
+                      })
+                    }
+                  </script>
+                  <script src="https://use.fontawesome.com/1744f3f671.js"></script>
+
                 <div class="section-subscribe wrap">
                     <div class="subscribe-wrap">
                         <form data-members-form="subscribe" class="subscribe-form">
@@ -508,7 +977,7 @@ family, friends, coworkers—who throw a proverbial wrench in the works.</p>
                                 <span class="nav-dot"></span>
                             </li>
                             <li class="nav-list-item">
-                                <a href="#" class="nav-link">Contact</a>
+                                <a href="#" class="nav-link myBtn">Contact</a>
                                 <span class="nav-dot"></span>
                             </li>
                         </ul>
@@ -643,7 +1112,25 @@ family, friends, coworkers—who throw a proverbial wrench in the works.</p>
                 });
             }
         </script>
-
+        <script>
+            var modal = document.getElementById("myModal");
+            var btn = document.getElementsByClassName("myBtn");
+            var span = document.getElementsByClassName("close")[0];
+            for (let i = 0; i < btn.length; i++) {
+              btn[i].onclick = function() {
+                modal.style.display = "block";
+                modal.style.zIndex = 1000;
+              }
+            }
+            span.onclick = function() {
+              modal.style.display = "none";
+            }
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
+            }
+        </script>
         <script>
             !(function () {
                 "use strict";
