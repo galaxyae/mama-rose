@@ -63,45 +63,44 @@
         <link rel="stylesheet" href="content/testimonials.css" />
         <script defer src="https://unpkg.com/@tryghost/portal@~0.14.0/umd/portal.min.js" data-ghost=""></script>
         <style>
+            /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: #010712; /* Fallback color */
+                background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+            }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #010712;/* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+            /* Modal Content */
+            .modal-content {
+                background-color: #010712;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+            }
 
-/* Modal Content */
-.modal-content {
-  background-color: #010712;;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
+            /* The Close Button */
+            .close {
+                color: #aaaaaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
 
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
             .gh-post-upgrade-cta-content,
             .gh-post-upgrade-cta {
                 display: flex;
@@ -166,6 +165,35 @@
             .gh-post-upgrade-cta a.gh-btn:hover {
                 opacity: 0.92;
             }
+            @media only screen and (max-width: 720px) {
+               /* styles for mobile browsers smaller than 480px; (iPhone) */
+               #big-logo{
+                 /* display: block; */
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+                 margin-top: 2.5em;
+                 width: 100%;
+                 flex-direction: column;
+               }
+               #louis{
+                 display: none;
+               }
+            }
+
+            @media only screen and (min-width: 720px) {
+               #big-logo{
+                 display: none;
+               }
+               #louis{
+                 display: block;
+                 width: 50%;
+               }
+               #louis img{
+                 overflow: visible;
+                 width: 1000px;
+               }
+            }
         </style>
         <meta name="generator" content="Ghost 3.40" />
         <link rel="alternate" type="application/rss+xml" title="Louis de great" href="#" />
@@ -174,267 +202,288 @@
     <body
         class="home-template global-hash-blue global-hash-dark-version global-hash-details-goldenrod global-hash-full-image global-hash-green global-hash-large global-hash-login-panel-disable global-hash-orange global-hash-post-orange global-hash-post-violet global-hash-red global-hash-violet global-hash-yellow"
     >
-    <style media="screen">
-    :root  {
-      --primary-color: #FCFDFD;
-      --secondary-color: #818386;
-      --bg-color: #010712;
-      --button-color: #818386;
-      --h1-color: #FCFDFD;
-    }
-.contact-container {
-display: flex;
-width: 100%;
-height: 100%;
-background: var(--bg-color);
-}
+        <style media="screen">
+                :root  {
+                  --primary-color: #FCFDFD;
+                  --secondary-color: #818386;
+                  --bg-color: #010712;
+                  --button-color: #818386;
+                  --h1-color: #FCFDFD;
+                }
+            .contact-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            }
 
-.left-col {
-width: 45%;
-height: 100%;
-background-image: url("https://images.pexels.com/photos/931018/pexels-photo-931018.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
-background-size: cover;
-background-repeat: no-repeat;
-}
+            .left-col {
+            width: 45%;
+            height: 100%;
+            background-image: url("https://images.pexels.com/photos/931018/pexels-photo-931018.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+            background-size: cover;
+            background-repeat: no-repeat;
+            }
 
-.logo {
-width: 100%;
-padding: 1.5rem;
-}
+            .logo {
+            width: 100%;
+            padding: 1.5rem;
+            }
 
-.right-col {
-background: var(--bg-color);
-width: 50vw;
-height: 50%;
-padding: 5rem 3.5rem;
-}
+            .right-col {
+            background: var(--bg-color);
+            width: 50vw;
+            height: 50%;
+            padding: 5rem 3.5rem;
+            }
 
-label, button, .description {
-font-weight: 400;
-letter-spacing: 0.1rem;
-}
+            label, button, .description {
+            font-weight: 400;
+            letter-spacing: 0.1rem;
+            }
 
-label, .description {
-color: var(--secondary-color);
-text-transform: uppercase;
-font-size: 0.625rem;
-}
+            label, .description {
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            font-size: 0.625rem;
+            }
 
-form {
-width: 31.25rem;
-position: relative;
-margin-top: 2rem;
-padding: 1rem 0;
-}
+            form {
+            width: 31.25rem;
+            position: relative;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            }
 
-input, textarea, label {
-width: 40vw;
-display: block;
-}
+            input, textarea, label {
+            width: 40vw;
+            display: block;
+            }
 
-placeholder, input, textarea {
-font-family: 'Helvetica Neue', sans-serif;
-}
+            placeholder, input, textarea {
+            font-family: 'Helvetica Neue', sans-serif;
+            }
 
-input::placeholder, textarea::placeholder {
-color: var(--primary-color);
-}
+            input::placeholder, textarea::placeholder {
+            color: var(--primary-color);
+            }
 
-input, textarea {
-color: var(--primary-color);
-font-weight: 500;
-background: var(--bg-color);
-border: none;
-border-bottom: 1px solid var(--secondary-color);
-padding: 0.5rem 0;
-margin-bottom: 1rem;
-outline: none;
-}
+            input, textarea {
+            color: var(--primary-color);
+            font-weight: 500;
+            background: var(--bg-color);
+            border: none;
+            border-bottom: 1px solid var(--secondary-color);
+            padding: 0.5rem 0;
+            margin-bottom: 1rem;
+            outline: none;
+            }
 
-textarea {
-resize: none;
-}
+            textarea {
+            resize: none;
+            }
 
-button {
-text-transform: uppercase;
-font-weight: 300;
-background: var(--button-color);
-color: var(--bg-color);
-width: 10rem;
-height: 2.25rem;
-border: none;
-border-radius: 2px;
-outline: none;
-cursor: pointer;
-}
+            button {
+            text-transform: uppercase;
+            font-weight: 300;
+            background: var(--button-color);
+            color: var(--bg-color);
+            width: 10rem;
+            height: 2.25rem;
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+            }
 
-input:hover, textarea:hover, button:hover {
-opacity: 0.5;
-}
+            input:hover, textarea:hover, button:hover {
+            opacity: 0.5;
+            }
 
-button:active {
-opacity: 0.8;
-}
+            button:active {
+            opacity: 0.8;
+            }
 
-/* Toggle Switch */
+            /* Toggle Switch */
 
-.theme-switch-wrapper {
-display: flex;
-align-items: center;
-text-align: center;
-width: 160px;
-position: absolute;
-top: 0.5rem;
-right: 0;
-}
+            .theme-switch-wrapper {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            width: 160px;
+            position: absolute;
+            top: 0.5rem;
+            right: 0;
+            }
 
-.description {
-  margin-left: 1.25rem;
-}
+            .description {
+              margin-left: 1.25rem;
+            }
 
-.theme-switch {
-display: inline-block;
-height: 34px;
-position: relative;
-width: 60px;
-}
+            .theme-switch {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            width: 60px;
+            }
 
-.theme-switch input {
-display:none;
-}
+            .theme-switch input {
+            display:none;
+            }
 
-.slider {
-background-color: #ccc;
-bottom: 0;
-cursor: pointer;
-left: 0;
-position: absolute;
-right: 0;
-top: 0;
-transition: .4s;
-}
+            .slider {
+            background-color: #ccc;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+            }
 
-.slider:before {
-background-color: #fff;
-bottom: 0.25rem;
-content: "";
-width: 26px;
-height: 26px;
-left: 0.25rem;
-position: absolute;
-transition: .4s;
-}
+            .slider:before {
+            background-color: #fff;
+            bottom: 0.25rem;
+            content: "";
+            width: 26px;
+            height: 26px;
+            left: 0.25rem;
+            position: absolute;
+            transition: .4s;
+            }
 
-input:checked + .slider {
-background-color: var(--button-color);
-}
+            input:checked + .slider {
+            background-color: var(--button-color);
+            }
 
-input:checked + .slider:before {
-transform: translateX(26px);
-}
+            input:checked + .slider:before {
+            transform: translateX(26px);
+            }
 
-.slider.round {
-border-radius: 34px;
-}
+            .slider.round {
+            border-radius: 34px;
+            }
 
-.slider.round:before {
-border-radius: 50%;
-}
+            .slider.round:before {
+            border-radius: 50%;
+            }
 
-#error, #success-msg {
-width: 40vw;
-margin: 0.125rem 0;
-font-size: 0.75rem;
-text-transform: uppercase;
-font-family: 'Jost';
-color: var(--secondary-color);
-}
-}
+            #error, #success-msg {
+            width: 40vw;
+            margin: 0.125rem 0;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-family: 'Jost';
+            color: var(--secondary-color);
+            }
+            }
 
-#success-msg {
-transition-delay: 3s;
-}
+            #success-msg {
+            transition-delay: 3s;
+            }
 
-@media only screen and (max-width: 950px) {
-.logo {
-  width: 8rem;
-}
+            @media only screen and (max-width: 950px) {
+            .logo {
+              width: 8rem;
+            }
 
-input, textarea, button {
-  font-size: 0.65rem;
-}
-.description {
-  font-size: 0.3rem;
-  margin-left: 0.4rem;
-}
-button {
-  width: 7rem;
-}
-.theme-switch-wrapper {
-  width: 120px;
-}
-.theme-switch {
-height: 28px;
-width: 50px;
-}
+            input, textarea, button {
+              font-size: 0.65rem;
+            }
+            .description {
+              font-size: 0.3rem;
+              margin-left: 0.4rem;
+            }
+            button {
+              width: 7rem;
+            }
+            .theme-switch-wrapper {
+              width: 120px;
+            }
+            .theme-switch {
+            height: 28px;
+            width: 50px;
+            }
 
-.theme-switch input {
-display:none;
-}
+            .theme-switch input {
+            display:none;
+            }
 
-.slider:before {
-background-color: #fff;
-bottom: 0.25rem;
-content: "";
-width: 20px;
-height: 20px;
-left: 0.25rem;
-position: absolute;
-transition: .4s;
-}
-input:checked + .slider:before {
-transform: translateX(16px);
-}
+            .slider:before {
+            background-color: #fff;
+            bottom: 0.25rem;
+            content: "";
+            width: 20px;
+            height: 20px;
+            left: 0.25rem;
+            position: absolute;
+            transition: .4s;
+            }
+            input:checked + .slider:before {
+            transform: translateX(16px);
+            }
 
-.slider.round {
-border-radius: 15px;
-}
+            .slider.round {
+            border-radius: 15px;
+            }
 
-.slider.round:before {
-border-radius: 50%;
-}
+            .slider.round:before {
+            border-radius: 50%;
+            }
 
-}
-    </style>
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="contact-container">
-          <div class="left-col">
-            <img class="logo" src="content/images/2019/09/logo.svg"/>
-          </div>
-          <div class="right-col">
-            <h3>Contact us</h3>
-            <p><a href="tel:+27 (65) 564-2667"><i class="fa fa-phone my-float"></i> +27 (65) 564-2667 </a>
-            </p><p><a href="https://api.whatsapp.com/send?phone=+27(65)564-2667." target="_blank">
-                <i class="fa fa-whatsapp my-float"></i> +27 (65) 564-2667
-            </a></p>
-            <div id="error"></div>
-        <div id="success-msg"></div>
-          </div>
+            }
+
+
+        </style>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="contact-container">
+                    <div class="left-col">
+                        <img class="logo" src="content/images/2019/09/logo.svg" />
+                    </div>
+                    <div class="right-col">
+                        <h3>Contact us</h3>
+                        <div style="font-size: 0.85em; width:100%; flex-direction: row;display:flex; justify-content: space-evenly;">
+                        <p>
+                            <a href="https://api.whatsapp.com/send?phone=+27(65)564-2667." target="_blank"> <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667 </a>
+                          </p><p>
+                            <a href="mailto:louisdegreat05@gmail.com" target="_blank"> <i class="fa fa-envelope my-float"></i> &nbsp;&nbsp; louisdegreat05@gmail.com </a>
+                        </p>
+                        </div>
+                        <div id="error"></div>
+                        <div id="success-msg"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
         <div class="global-wrap">
+          <div id="big-logo" class="" style="">
+            <div class="" style="width: 60%;">
+              <a href="/"> <img src="content/images/2019/09/logo.svg" width="100%" alt="Louis de great" /></a>
+            </div>
+            <div style="font-size: 0.85em; width:100%; flex-direction: row;display:flex; justify-content: space-evenly;">
+            <p>
+                <a href="https://api.whatsapp.com/send?phone=+27(65)564-2667." target="_blank"> <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667 </a>
+              </p><p>
+                <a href="mailto:louisdegreat05@gmail.com" target="_blank"> <i class="fa fa-envelope my-float"></i> &nbsp;&nbsp; louisdegreat05@gmail.com </a>
+            </p>
+            </div>
+          </div>
             <div class="section-content-wrap">
                 <div class="section-header wrap">
                     <header class="header-wrap flex">
-                        <div class="header-logo">
+                        <div class="header-logo" id="louis">
                             <h1 class="is-logo">
-                                <a href="/"><img src="content/images/2019/09/logo.svg" alt="Louis de great" /></a>
-                                <p  style="font-size: .85em;"><a href="https://api.whatsapp.com/send?phone=+27(65)564-2667." target="_blank">
-                                    <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667
-                                </a></p>
+                                <a href="/"> <img src="content/images/2019/09/logo.svg" alt="Louis de great" /></a>
+                                <div style="font-size: 0.85em; width:100%; flex-direction: column;display:flex; justify-content: space-evenly;">
+                                <p>
+                                    <a href="https://api.whatsapp.com/send?phone=+27(65)564-2667." target="_blank"> <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667 </a>
+                                  </p><p>
+                                    <a href="mailto:louisdegreat05@gmail.com" target="_blank"> <i class="fa fa-envelope my-float"></i> &nbsp;&nbsp; louisdegreat05@gmail.com </a>
+                                </p>
+                                </div>
                             </h1>
                         </div>
                         <div class="header-nav">
@@ -498,8 +547,7 @@ border-radius: 50%;
                                 </span>
                                 <h2><a href="#">Financial instability.</a><span class="featured-dot"></span></h2>
                                 <h5>Financial instability can overwhelm you and may lead to other forms of stress and anxiety. Come to me for a solution to get all your businesses back in line and stabilize your finances</h5>
-                                <div class="item-meta white">
-                                </div>
+                                <div class="item-meta white"></div>
                             </article>
                         </div>
                     </div>
@@ -517,8 +565,7 @@ border-radius: 50%;
                                 </span>
                                 <h2><a href="#">Marriage Spells</a><span class="featured-dot"></span></h2>
                                 <p>For many reasons your partner might cheat or worst even leave you. Get a marriage spell that will bind you and your partner and never will anything come between you.</p>
-                                <div class="item-meta white">
-                                </div>
+                                <div class="item-meta white"></div>
                             </article>
                         </div>
                     </div>
@@ -528,19 +575,19 @@ border-radius: 50%;
                     <span id="next-btn" class="next"></span>
                 </div>
                 <script type="text/javascript">
-                var btn = document.getElementById("next");
+                    var btn = document.getElementById("next");
 
                     window.onload = function () {
                         setInterval(function () {
-                          if (!document.hidden) {
-                            btn.click();
-                          }
+                            if (!document.hidden) {
+                                btn.click();
+                            }
                             // btn.click();
                         }, 5000);
                         setInterval(function () {
-                          if(btn.clicked == true){
-                            console.log("clicked");
-                          }
+                            if (btn.clicked == true) {
+                                console.log("clicked");
+                            }
                         }, 1000);
                     };
                 </script>
@@ -578,7 +625,8 @@ border-radius: 50%;
                                 <h2><a href="#" class="white">PROTECTION</a></h2>
                                 <div class="item-meta white is-primary-tag">
                                     <p>
-                                      Are you having weird,body pains and nightmares,unstoping affections, animals that cry, sudden accidents, business failing. For property and self protection from enemies come we do a traditional spells of protection for you
+                                        Are you having weird,body pains and nightmares,unstoping affections, animals that cry, sudden accidents, business failing. For property and self protection from enemies come we do a traditional spells
+                                        of protection for you
                                         <!-- Attraction spells are used to create interest between two people. An attraction spell can be used to get others to like you more or feel romantic and emotional towards you. The key difference between
                                         a straightforward love spell and a romantic attraction spell is that attraction is more on the temporary side while love spells aim for a longer commitment. That is not to say that they’re mutually
                                         exclusive. You can have both! -->
@@ -594,7 +642,10 @@ border-radius: 50%;
                                 <h2><a href="#" class="white">FINANCIAL RESCUE </a></h2>
                                 <div class="item-meta white is-primary-tag">
                                     <p>
-                                        Have you been working off your neves with all bills on you making you to achieve your dreams on a small scale you wonder how your frds,bosses and others do it,stand still and have time to think a lot these delays may include jealousy people around you ,use of your luck by your bosses or partners coz they see you have luck in all that you touch or you also didn’t know that you can increase your luck magically through my traditional powers contact me we find a solution to your financial struggles of home,business,basics loans that you see are not going anywhere. get job promotions and favours by your bosses , luck in sells and business success and be your own boss
+                                        Have you been working off your neves with all bills on you making you to achieve your dreams on a small scale you wonder how your frds,bosses and others do it,stand still and have time to think a lot
+                                        these delays may include jealousy people around you ,use of your luck by your bosses or partners coz they see you have luck in all that you touch or you also didn’t know that you can increase your
+                                        luck magically through my traditional powers contact me we find a solution to your financial struggles of home,business,basics loans that you see are not going anywhere. get job promotions and favours
+                                        by your bosses , luck in sells and business success and be your own boss
                                     </p>
                                 </div>
                                 <a class="primary-tag global-tag white" href="#">Wealth Spells</a>
@@ -609,38 +660,30 @@ border-radius: 50%;
                                     Mirror magic can be a great way to see your partner and or their actions, to give yourself healing energy and love, for scrying, and can even be used to see yourself in a future life. Reflective surfaces
                                     have been used for millennia for magic of all purposes, including scrying and seeing the truth of a situation.
                                 </p>
-                                <div class="item-meta white is-primary-tag">
-                                </div>
+                                <div class="item-meta white is-primary-tag"></div>
                                 <a class="primary-tag global-tag white" href="#">MAGIC</a>
                             </article>
                         </div>
                         <div class="item-wrap flex post tag-people is-image">
                             <article>
                                 <a href="#" class="item-link-overlay" aria-label="Look at life with the eyes of a child"></a>
-                                <div
-                                    class="item-image"
-                                    style="
-                                        background-image: url(https://images.pexels.com/photos/6551408/pexels-photo-6551408.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-                                    "
-                                ></div>
+                                <div class="item-image" style="background-image: url(https://images.pexels.com/photos/6551408/pexels-photo-6551408.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);"></div>
                                 <h4>
                                     <a href="#" class="white">
                                         BOBY ACTIVITION
                                     </a>
                                 </h4>
-                                <p>I also offer traditional herbs for a healthy body. Are you having sexual issues like erectile disfunction and failing to satisfy your partner, infertility in women and failure to have a child, bad body odour, hair loss, skin peeling and energy boosting, and many more. Contact me now</p>
-                                <div class="item-meta white is-primary-tag">
-                                </div>
+                                <p>
+                                    I also offer traditional herbs for a healthy body. Are you having sexual issues like erectile disfunction and failing to satisfy your partner, infertility in women and failure to have a child, bad body
+                                    odour, hair loss, skin peeling and energy boosting, and many more. Contact me now
+                                </p>
+                                <div class="item-meta white is-primary-tag"></div>
                                 <a class="primary-tag global-tag white" href="#">Spells</a>
                             </article>
                         </div>
                         <div class="item-wrap flex post tag-design featured is-image">
                             <article>
-                                <a
-                                    href="#"
-                                    class="item-link-overlay"
-                                    aria-label="I think it&#x27;s the responsibility of a designer to try to break rules and barriers"
-                                ></a>
+                                <a href="#" class="item-link-overlay" aria-label="I think it&#x27;s the responsibility of a designer to try to break rules and barriers"></a>
                                 <div class="item-image" style="background-image: url(https://images.pexels.com/photos/6512277/pexels-photo-6512277.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);"></div>
                                 <h2><a href="#" class="white">Tarot (Card) reading</a></h2>
                                 <div class="item-meta white is-primary-tag">
@@ -655,63 +698,60 @@ border-radius: 50%;
                         <div class="item-wrap flex post tag-education is-image">
                             <article>
                                 <a href="#" class="item-link-overlay" aria-label="Every day, in every city and town across the country"></a>
-                                <div
-                                    class="item-image"
-                                    style="
-                                        background-image: url();
-                                    "
-                                ></div>
+                                <div class="item-image" style="background-image: url();"></div>
                                 <video id="background-video" autoplay loop muted poster="https://images.pexels.com/photos/5159914/pexels-photo-5159914.png?auto=compress&cs=tinysrgb&dpr=1&w=500">
-                                  <source src="https://vod-progressive.akamaized.net/exp=1644479356~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F3591%2F25%2F642959184%2F2948118894.mp4~hmac=2b4cdef2e6304b5884e07f5b196299eade75d09a551d846b3ce10702c544fc5f/vimeo-prod-skyfire-std-us/01/3591/25/642959184/2948118894.mp4" type="video/mp4">
+                                    <source
+                                        src="https://vod-progressive.akamaized.net/exp=1644479356~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F3591%2F25%2F642959184%2F2948118894.mp4~hmac=2b4cdef2e6304b5884e07f5b196299eade75d09a551d846b3ce10702c544fc5f/vimeo-prod-skyfire-std-us/01/3591/25/642959184/2948118894.mp4"
+                                        type="video/mp4"
+                                    />
                                 </video>
                                 <style media="screen">
-                                #background-video {
-                                  object-fit: cover;
-                                  position: absolute;
-                                  left: 0;
-                                  right: 0;
-                                  top: 0;
-                                  bottom: 0;
-                                  z-index: -1;
-                                  }
-                                  @media only screen and (min-width: 1200px){
                                     #background-video {
-                                      width: 40vw;
-                                      height: 110vh;
+                                        object-fit: cover;
+                                        position: absolute;
+                                        left: 0;
+                                        right: 0;
+                                        top: 0;
+                                        bottom: 0;
+                                        z-index: -1;
                                     }
-                                  }
-                                  @media only screen and (max-width: 1200px){
-                                    #background-video {
-                                      width: 50vw;
-                                      height: 110vw;
+                                    @media only screen and (min-width: 1200px) {
+                                        #background-video {
+                                            width: 40vw;
+                                            height: 110vh;
+                                        }
                                     }
-                                  }
-                                  @media only screen and (min-width: 720px) and (max-width: 850px){
-                                    #background-video {
-                                      width: 100vw;
-                                      height: 100vw;
+                                    @media only screen and (max-width: 1200px) {
+                                        #background-video {
+                                            width: 50vw;
+                                            height: 110vw;
+                                        }
                                     }
-                                  }
-                                  @media only screen and (max-width: 720px){
-                                    #background-video {
-                                      width: 100vw;
-                                      height: 100vw;
+                                    @media only screen and (min-width: 720px) and (max-width: 850px) {
+                                        #background-video {
+                                            width: 100vw;
+                                            height: 100vw;
+                                        }
                                     }
-                                  }
-                                  @media only screen and (max-width: 480px){
-                                    #background-video {
-                                      width: 25vw;
-                                      height: 110vw;
+                                    @media only screen and (max-width: 720px) {
+                                        #background-video {
+                                            width: 100vw;
+                                            height: 100vw;
+                                        }
                                     }
-                                  }
+                                    @media only screen and (max-width: 480px) {
+                                        #background-video {
+                                            width: 25vw;
+                                            height: 110vw;
+                                        }
+                                    }
                                 </style>
                                 <h2>
                                     <a href="#" class="white" style="-webkit-text-stroke: 1px black;">
                                         Come to me and burn all your problems away. Get rid of any misfortunes, family problems and secure your beloved ones from the snares of your enemies.
                                     </a>
                                 </h2>
-                                <div class="item-meta white is-primary-tag">
-                                </div>
+                                <div class="item-meta white is-primary-tag"></div>
                                 <a class="primary-tag global-tag white" href="#">Guidance</a>
                             </article>
                         </div>
@@ -720,11 +760,11 @@ border-radius: 50%;
                                 <a href="#" class="item-link-overlay" aria-label="A solution for you"></a>
                                 <div class="item-image" style="background-image: url(https://images.pexels.com/photos/1134204/pexels-photo-1134204.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);"></div>
                                 <h2><a href="#" class="white">A SOLUTION FOR YOU</a></h2>
-                                <p>Get rid of all the stress around you like financial instability, loan debts, child care, unstable marriages, short term relationships, unstable family,
-                                  enemies after you and your family, unhealthy life, and many more. Come to me and have all that driven away
+                                <p>
+                                    Get rid of all the stress around you like financial instability, loan debts, child care, unstable marriages, short term relationships, unstable family, enemies after you and your family, unhealthy life,
+                                    and many more. Come to me and have all that driven away
                                 </p>
-                                <div class="item-meta white is-primary-tag">
-                                </div>
+                                <div class="item-meta white is-primary-tag"></div>
                                 <a class="primary-tag global-tag white" href="#">Love Spells</a>
                             </article>
                         </div>
@@ -733,12 +773,11 @@ border-radius: 50%;
                                 <a href="#" class="item-link-overlay" aria-label="Pop culture is a reflection"></a>
                                 <div class="item-image" style="background-image: url(https://images.pexels.com/photos/3916019/pexels-photo-3916019.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);"></div>
                                 <h2><a href="#" class="white">Marriage</a></h2>
-                                <p>For many, marriage is the culmination of multiple phases of life and comes at a time when they’re ready to move to the
-next plateau. But sometimes both parties aren’t on the same page. Sometimes feet get cold. And other times there are meddling parties—
-family, friends, coworkers—who throw a proverbial wrench in the works.</p>
-                                <div class="item-meta white is-primary-tag">
-
-                                </div>
+                                <p>
+                                    For many, marriage is the culmination of multiple phases of life and comes at a time when they’re ready to move to the next plateau. But sometimes both parties aren’t on the same page. Sometimes feet get
+                                    cold. And other times there are meddling parties— family, friends, coworkers—who throw a proverbial wrench in the works.
+                                </p>
+                                <div class="item-meta white is-primary-tag"></div>
                                 <a class="primary-tag global-tag white" href="#">Marriage SPells</a>
                             </article>
                         </div>
@@ -747,171 +786,178 @@ family, friends, coworkers—who throw a proverbial wrench in the works.</p>
 
                 <style media="screen">
                     body {
-                      width: 100%;
-                      height: auto;
-                    /*     font-family: Dubai-Light; */
+                        width: 100%;
+                        height: auto;
+                        /*     font-family: Dubai-Light; */
                     }
                 </style>
                 <div class="container">
-                  <section id="testim" class="testim">
-                           <div class="testim-cover">
-                              <div class="wrap">
+                    <section id="testim" class="testim">
+                        <div class="testim-cover">
+                            <div class="wrap">
+                                <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+                                <span id="left-arrow" class="arrow left fa fa-chevron-left"></span>
+                                <ul id="testim-dots" class="dots">
+                                    <li class="dot active"></li>
+                                    <!--
+                                      -->
+                                    <li class="dot"></li>
+                                    <!--
+                                      -->
+                                    <li class="dot"></li>
+                                    <!--
+                                      -->
+                                    <li class="dot"></li>
+                                </ul>
+                                <div id="testim-content" class="cont">
+                                    <div class="active">
+                                        <div class="img"><img src="content/images/testim1.jpeg" alt="" /></div>
+                                        <h2>Faith Amba</h2>
+                                        <p style="font-size: 0.8em;">
+                                            Am faith amba am South African raised in soweto married to mr amba joseph South African as well the reason as why I have mention all above is that i truely testify that Louis de great . Is a true
+                                            and honest healing tradition healer with magic miracles that truely healed our hearts me and my husband, we had a textile company which we owned for good years in Vaal it offered jobs and supplied
+                                            country wired and we were good leaved,a beautiful life with our family but all over suddenly our company started declining in servicing we took loans to empower it again so that we run it as it
+                                            was but it really and honestly failed us it realy brought a financial crisis btw us coz we lost all want we had in loans and brought disturbs btw us we could have fights at home that later brought
+                                            separation btw us leaving me a single mother and my husband with no family support, my husband later flu out of Sa looking also for a living but later I also came here doughting but having a heart
+                                            of trying to bring my life again we’re I came across many healers but I choose dr Louis de great who helped and brought my life back to normal they were many things he checked and sow that made us
+                                            go wrong and I had to put my faith at once and did as traditional instructed us with many that I won’t be able to mention here but to cut the story short I got my husband and bussiness back we now
+                                            protected and wealthy with prove you can email on faithaber231@gmail.com..because I can’t put my contact here for personal reasons as a mother and wife.
+                                        </p>
+                                    </div>
 
-                                  <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
-                                  <span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
-                                  <ul id="testim-dots" class="dots">
-                                      <li class="dot active"></li><!--
-                                      --><li class="dot"></li><!--
-                                      --><li class="dot"></li><!--
-                                      --><li class="dot"></li>
-                                  </ul>
-                                  <div id="testim-content" class="cont">
+                                    <div>
+                                        <div class="img"><img src="content/images/testim2.jpeg" alt="" /></div>
+                                        <h2>-</h2>
+                                        <p>-</p>
+                                    </div>
 
-                                      <div class="active">
-                                          <div class="img"><img src="content/images/testim1.jpeg" alt=""></div>
-                                          <h2>Faith Amba</h2>
-                                          <p style="font-size: .8em;">Am faith amba am South African raised in soweto married to mr amba joseph South African as well the reason as why I have mention all above is that i truely testify that  Louis de great . Is a true and honest healing tradition healer with magic miracles that truely healed our hearts me and my husband, we had a textile company which we owned for good years in Vaal it offered jobs and supplied country wired and we were good leaved,a beautiful life with our family but all over suddenly our company started declining in servicing we took loans to empower it again so that we run it as it was but it really and honestly failed us it realy brought a financial crisis btw us coz we lost all want we had in loans and brought disturbs btw us we could have fights at home that later brought separation btw us leaving me a single mother and my husband with no family support, my husband later flu out of Sa looking also for a living but later I also came here doughting but having a heart of trying to bring my life again we’re I came across many healers but I choose dr Louis de great who helped and brought my life back to normal they were many things he checked and sow that made us go wrong and I had to put my faith at once and did as traditional instructed us with many that I won’t be able to mention here but to cut the story short I got my husband and bussiness back we now protected and wealthy with prove you can email on  faithaber231@gmail.com..because I can’t put my contact here for personal reasons as a mother and wife.</p>
-                                      </div>
+                                    <div>
+                                        <div class="img"><img src="content/images/testim3.jpeg" alt="" /></div>
+                                        <h2>-</h2>
+                                        <p>-</p>
+                                    </div>
 
-                                      <div>
-                                          <div class="img"><img src="content/images/testim2.jpeg" alt=""></div>
-                                          <h2>-</h2>
-                                          <p>-</p>
-                                      </div>
+                                    <div>
+                                        <div class="img"><img src="content/images/testim4.jpeg" alt="" /></div>
+                                        <h2>-</h2>
+                                        <p>-</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <script type="text/javascript">
+                    // vars
+                    "use strict";
+                    var testim = document.getElementById("testim"),
+                        testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
+                        testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
+                        testimLeftArrow = document.getElementById("left-arrow"),
+                        testimRightArrow = document.getElementById("right-arrow"),
+                        testimSpeed = 20000,
+                        currentSlide = 0,
+                        currentActive = 0,
+                        testimTimer,
+                        touchStartPos,
+                        touchEndPos,
+                        touchPosDiff,
+                        ignoreTouch = 30;
+                    window.onload = function () {
+                        // Testim Script
+                        function playSlide(slide) {
+                            for (var k = 0; k < testimDots.length; k++) {
+                                testimContent[k].classList.remove("active");
+                                testimContent[k].classList.remove("inactive");
+                                testimDots[k].classList.remove("active");
+                            }
 
-                                      <div>
-                                          <div class="img"><img src="content/images/testim3.jpeg" alt=""></div>
-                                          <h2>-</h2>
-                                          <p>-</p>
-                                      </div>
+                            if (slide < 0) {
+                                slide = currentSlide = testimContent.length - 1;
+                            }
 
-                                      <div>
-                                          <div class="img"><img src="content/images/testim4.jpeg" alt=""></div>
-                                          <h2>-</h2>
-                                          <p>-</p>
-                                      </div>
-                                  </div>
+                            if (slide > testimContent.length - 1) {
+                                slide = currentSlide = 0;
+                            }
 
-                              </div>
-                           </div>
-                      </section>
-                  </div>
-                  <script type="text/javascript">
-                  // vars
-                    'use strict'
-                    var	testim = document.getElementById("testim"),
-                      testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
-                      testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
-                      testimLeftArrow = document.getElementById("left-arrow"),
-                      testimRightArrow = document.getElementById("right-arrow"),
-                      testimSpeed = 20000,
-                      currentSlide = 0,
-                      currentActive = 0,
-                      testimTimer,
-                      touchStartPos,
-                      touchEndPos,
-                      touchPosDiff,
-                      ignoreTouch = 30;
-                    ;
+                            if (currentActive != currentSlide) {
+                                testimContent[currentActive].classList.add("inactive");
+                            }
+                            testimContent[slide].classList.add("active");
+                            testimDots[slide].classList.add("active");
 
-                    window.onload = function() {
+                            currentActive = currentSlide;
 
-                      // Testim Script
-                      function playSlide(slide) {
-                          for (var k = 0; k < testimDots.length; k++) {
-                              testimContent[k].classList.remove("active");
-                              testimContent[k].classList.remove("inactive");
-                              testimDots[k].classList.remove("active");
-                          }
+                            clearTimeout(testimTimer);
+                            testimTimer = setTimeout(function () {
+                                playSlide((currentSlide += 1));
+                            }, testimSpeed);
+                        }
 
-                          if (slide < 0) {
-                              slide = currentSlide = testimContent.length-1;
-                          }
+                        testimLeftArrow.addEventListener("click", function () {
+                            playSlide((currentSlide -= 1));
+                        });
 
-                          if (slide > testimContent.length - 1) {
-                              slide = currentSlide = 0;
-                          }
+                        testimRightArrow.addEventListener("click", function () {
+                            playSlide((currentSlide += 1));
+                        });
 
-                          if (currentActive != currentSlide) {
-                              testimContent[currentActive].classList.add("inactive");
-                          }
-                          testimContent[slide].classList.add("active");
-                          testimDots[slide].classList.add("active");
+                        for (var l = 0; l < testimDots.length; l++) {
+                            testimDots[l].addEventListener("click", function () {
+                                playSlide((currentSlide = testimDots.indexOf(this)));
+                            });
+                        }
 
-                          currentActive = currentSlide;
+                        playSlide(currentSlide);
 
-                          clearTimeout(testimTimer);
-                          testimTimer = setTimeout(function() {
-                              playSlide(currentSlide += 1);
-                          }, testimSpeed)
-                      }
+                        // keyboard shortcuts
+                        document.addEventListener("keyup", function (e) {
+                            switch (e.keyCode) {
+                                case 37:
+                                    testimLeftArrow.click();
+                                    break;
 
-                      testimLeftArrow.addEventListener("click", function() {
-                          playSlide(currentSlide -= 1);
-                      })
+                                case 39:
+                                    testimRightArrow.click();
+                                    break;
 
-                      testimRightArrow.addEventListener("click", function() {
-                          playSlide(currentSlide += 1);
-                      })
+                                case 39:
+                                    testimRightArrow.click();
+                                    break;
 
-                      for (var l = 0; l < testimDots.length; l++) {
-                          testimDots[l].addEventListener("click", function() {
-                              playSlide(currentSlide = testimDots.indexOf(this));
-                          })
-                      }
+                                default:
+                                    break;
+                            }
+                        });
 
-                      playSlide(currentSlide);
+                        testim.addEventListener("touchstart", function (e) {
+                            touchStartPos = e.changedTouches[0].clientX;
+                        });
 
-                      // keyboard shortcuts
-                      document.addEventListener("keyup", function(e) {
-                          switch (e.keyCode) {
-                              case 37:
-                                  testimLeftArrow.click();
-                                  break;
+                        testim.addEventListener("touchend", function (e) {
+                            touchEndPos = e.changedTouches[0].clientX;
 
-                              case 39:
-                                  testimRightArrow.click();
-                                  break;
+                            touchPosDiff = touchStartPos - touchEndPos;
 
-                              case 39:
-                                  testimRightArrow.click();
-                                  break;
+                            console.log(touchPosDiff);
+                            console.log(touchStartPos);
+                            console.log(touchEndPos);
 
-                              default:
-                                  break;
-                          }
-                      })
-
-                      testim.addEventListener("touchstart", function(e) {
-                          touchStartPos = e.changedTouches[0].clientX;
-                      })
-
-                      testim.addEventListener("touchend", function(e) {
-                          touchEndPos = e.changedTouches[0].clientX;
-
-                          touchPosDiff = touchStartPos - touchEndPos;
-
-                          console.log(touchPosDiff);
-                          console.log(touchStartPos);
-                          console.log(touchEndPos);
-
-
-                          if (touchPosDiff > 0 + ignoreTouch) {
-                              testimLeftArrow.click();
-                          } else if (touchPosDiff < 0 - ignoreTouch) {
-                              testimRightArrow.click();
-                          } else {
-                            return;
-                          }
-
-                      })
-                    }
-                  </script>
-                  <script src="https://use.fontawesome.com/1744f3f671.js"></script>
+                            if (touchPosDiff > 0 + ignoreTouch) {
+                                testimLeftArrow.click();
+                            } else if (touchPosDiff < 0 - ignoreTouch) {
+                                testimRightArrow.click();
+                            } else {
+                                return;
+                            }
+                        });
+                    };
+                </script>
+                <script src="https://use.fontawesome.com/1744f3f671.js"></script>
 
                 <div class="section-subscribe wrap">
                     <div class="subscribe-wrap">
-                        <form data-members-form="subscribe" class="subscribe-form" style="width:100%;">
+                        <form data-members-form="subscribe" class="subscribe-form" style="width: 100%;">
                             <h4>Join our occasional newsletter</h4>
                             <div id="ityped" class="ityped">
                                 <span class="ityped-wrap"></span>
@@ -1086,19 +1132,19 @@ family, friends, coworkers—who throw a proverbial wrench in the works.</p>
             var btn = document.getElementsByClassName("myBtn");
             var span = document.getElementsByClassName("close")[0];
             for (let i = 0; i < btn.length; i++) {
-              btn[i].onclick = function() {
-                modal.style.display = "block";
-                modal.style.zIndex = 1000;
-              }
+                btn[i].onclick = function () {
+                    modal.style.display = "block";
+                    modal.style.zIndex = 1000;
+                };
             }
-            span.onclick = function() {
-              modal.style.display = "none";
-            }
-            window.onclick = function(event) {
-              if (event.target == modal) {
+            span.onclick = function () {
                 modal.style.display = "none";
-              }
-            }
+            };
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            };
         </script>
         <script>
             !(function () {
