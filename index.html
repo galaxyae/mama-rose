@@ -167,7 +167,7 @@
             }
             @media only screen and (max-width: 720px) {
                /* styles for mobile browsers smaller than 480px; (iPhone) */
-               #big-logo{
+               #big-logo, #footer-logo{
                  /* display: block; */
                  display: flex;
                  align-items: center;
@@ -191,7 +191,7 @@
                }
                #louis img{
                  overflow: visible;
-                 width: 1000px;
+                 width: 25vw;
                }
             }
         </style>
@@ -440,12 +440,12 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <div class="contact-container">
-                    <div class="left-col">
-                        <img class="logo" src="content/images/2019/09/logo.svg" />
-                    </div>
+                    <!-- <div class="left-col" style="position:absolute; height: 100%; z-index:1">
+                        <img class="logo" style="display:none;" src="content/images/2019/09/logo.svg" />
+                    </div> -->
                     <div class="right-col">
                         <h3>Contact us</h3>
-                        <div style="font-size: 0.85em; width:100%; flex-direction: row;display:flex; justify-content: space-evenly;">
+                        <div style="font-size: 1em; width:100%; flex-direction: column;display:flex; justify-content: space-evenly;">
                         <p>
                             <a href="https://api.whatsapp.com/send?phone=+27(65)564-2667." target="_blank"> <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667 </a>
                           </p><p>
@@ -475,9 +475,10 @@
                 <div class="section-header wrap">
                     <header class="header-wrap flex">
                         <div class="header-logo" id="louis">
-                            <h1 class="is-logo">
-                                <a href="/"> <img src="content/images/2019/09/logo.svg" alt="Louis de great" /></a>
-                                <div style="font-size: 0.85em; width:100%; flex-direction: column;display:flex; justify-content: space-evenly;">
+                            <h1 class="" style"">
+                                <a href="/">
+                                  <img src="content/images/2019/09/logo.svg" alt="Louis de great" /></a>
+                                <div style="font-size: 0.95em; width:100%; flex-direction: column;display:flex; justify-content: space-evenly;">
                                 <p>
                                     <a href="https://api.whatsapp.com/send?phone=+27(65)564-2667." target="_blank"> <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667 </a>
                                   </p><p>
@@ -954,33 +955,21 @@
                     };
                 </script>
                 <script src="https://use.fontawesome.com/1744f3f671.js"></script>
-
-                <div class="section-subscribe wrap">
-                    <div class="subscribe-wrap">
-                        <form data-members-form="subscribe" class="subscribe-form" style="width: 100%;">
-                            <h4>Join our occasional newsletter</h4>
-                            <div id="ityped" class="ityped">
-                                <span class="ityped-wrap"></span>
-                            </div>
-                            <div class="form-group">
-                                <input data-members-email class="subscribe-input" placeholder="Your email address" type="email" name="email" aria-label="Your email address" required />
-                            </div>
-                            <button type="submit" class="global-button">Subscribe</button>
-                        </form>
-                        <p class="subscribe-alert-loading">Processing your application</p>
-                        <p class="subscribe-alert-error">There was an error sending the email, please try again</p>
-                        <div class="subscribe-success">
-                            <h3>Great!</h3>
-                            Check your inbox and click the link to confirm your subscription
-                        </div>
-                    </div>
-                </div>
             </div>
             <footer class="section-footer">
                 <div class="footer-wrap wrap flex">
-                    <div class="footer-logo flex">
-                        <a class="is-logo" href="/"><img src="content/images/2019/09/logo.svg" alt="Louis de great" /></a>
+                  <div id="footer-logo" class="" style="">
+                    <div class="" style="width: 60%;">
+                      <a href="/"> <img src="content/images/2019/09/logo.svg" width="100%" alt="Louis de great" /></a>
                     </div>
+                    <div style="font-size: 0.85em; width:100%; flex-direction: row;display:flex; justify-content: space-evenly;">
+                    <p>
+                        <a href="https://api.whatsapp.com/send?phone=+27(65)564-2667." target="_blank"> <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667 </a>
+                      </p><p>
+                        <a href="mailto:louisdegreat05@gmail.com" target="_blank"> <i class="fa fa-envelope my-float"></i> &nbsp;&nbsp; louisdegreat05@gmail.com </a>
+                    </p>
+                    </div>
+                  </div>
                     <div class="footer-nav">
                         <ul class="nav-list">
                             <li class="nav-list-item">
