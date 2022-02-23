@@ -194,6 +194,59 @@
                  width: 25vw;
                }
             }
+
+          .button-container{
+            cursor: pointer;
+            padding: 0 10px;
+          }
+
+          .btn, .email-btn {
+            display: block;
+            cursor: pointer;
+            height: 50px;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+            font-size: 1em;
+            text-align: center;
+            line-height: 20px
+
+          }
+          .email-btn{
+            text-transform: lowercase;
+          }
+          .email-btn:after{
+            position: absolute;
+            content: "";
+            display: inline-block;
+            height: 50px;
+            width: 372px;
+            z-index: -1;
+            transform: translateX(-280px);
+            transition: transform 400ms ease-in;
+          }
+          .btn:after {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            background: #3bade3;
+            background: linear-gradient(45deg, #3bade3 0%, #576fe6 25%, #9844b7 51%, #ff357f 100%);
+            height: 50px;
+            width: 372px;
+            z-index: -1;
+            transform: translateX(-280px);
+            transition: transform 400ms ease-in;
+          }
+          .btn:hover:after {
+            /* transform: translateX(-200px); */
+          }
+          .btn span {
+            position: relative;
+            top: 16px;
+          }
         </style>
         <meta name="generator" content="Ghost 3.40" />
         <link rel="alternate" type="application/rss+xml" title="Louis de great" href="#" />
@@ -446,11 +499,12 @@
                     <div class="right-col">
                         <h3>Contact us</h3>
                         <div style="font-size: 1em; width:100%; flex-direction: column;display:flex; justify-content: space-evenly;">
-                        <p>
-                            <a href="https://api.whatsapp.com/send?phone=+27(65)564-2667." target="_blank"> <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667 </a>
-                          </p><p>
-                            <a href="mailto:louisdegreat05@gmail.com" target="_blank"> <i class="fa fa-envelope my-float"></i> &nbsp;&nbsp; louisdegreat05@gmail.com </a>
-                        </p>
+                          <p class="button-container">
+                              <a href="tel:+27(65)564-2667" target="_blank" class="btn" style="font-weight: bold;"> <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667 </a>
+                          </p>
+                          <p class="button-container" style="width: 100%; align-items:center;">
+                              <a href="mailto:louisdegreat05@gmail.com" target="_blank" class="email-btn"> <i class="fa fa-envelope my-float"></i> &nbsp;&nbsp; louisdegreat05@gmail.com </a>
+                          </p>
                         </div>
                         <div id="error"></div>
                         <div id="success-msg"></div>
@@ -463,12 +517,13 @@
             <div class="" style="width: 60%;">
               <a href="/"> <img src="content/images/2019/09/logo.svg" width="100%" alt="Louis de great" /></a>
             </div>
-            <div style="font-size: 0.85em; width:100%; flex-direction: row;display:flex; justify-content: space-evenly;">
-            <p>
-                <a href="https://api.whatsapp.com/send?phone=+27(65)564-2667." target="_blank"> <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667 </a>
-              </p><p>
-                <a href="mailto:louisdegreat05@gmail.com" target="_blank"> <i class="fa fa-envelope my-float"></i> &nbsp;&nbsp; louisdegreat05@gmail.com </a>
-            </p>
+            <div style="font-size: 0.95em; width:100%; flex-direction: column; display:flex; justify-content:center;">
+              <p class="button-container">
+                  <a href="tel:+27(65)564-2667" target="_blank" class="btn" style="font-weight: bold;"> <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667 </a>
+              </p>
+              <p class="button-container" style="width: 100%; align-items:center;">
+                  <a href="mailto:louisdegreat05@gmail.com" target="_blank" class="email-btn"> <i class="fa fa-envelope my-float"></i> &nbsp;&nbsp; louisdegreat05@gmail.com </a>
+              </p>
             </div>
           </div>
             <div class="section-content-wrap">
@@ -478,10 +533,11 @@
                             <h1 class="" style"">
                                 <a href="/">
                                   <img src="content/images/2019/09/logo.svg" alt="Louis de great" /></a>
-                                <div style="font-size: 0.95em; width:100%; flex-direction: column;display:flex; justify-content: space-evenly;">
-                                <p>
-                                    <a href="https://api.whatsapp.com/send?phone=+27(65)564-2667." target="_blank"> <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667 </a>
-                                  </p><p>
+                                <div style="font-size: 0.95em; width:100%; flex-direction: column; display: flex; flex-direction:row; justify-content: center;">
+                                  <p class="button-container" style="width:20vw;">
+                                      <a href="tel:+27(65)564-2667" target="_blank" class="btn"> <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667 </a>
+                                    </p>
+                                    <p style="width:20vw;">
                                     <a href="mailto:louisdegreat05@gmail.com" target="_blank"> <i class="fa fa-envelope my-float"></i> &nbsp;&nbsp; louisdegreat05@gmail.com </a>
                                 </p>
                                 </div>
@@ -962,12 +1018,13 @@
                     <div class="" style="width: 60%;">
                       <a href="/"> <img src="content/images/2019/09/logo.svg" width="100%" alt="Louis de great" /></a>
                     </div>
-                    <div style="font-size: 0.85em; width:100%; flex-direction: row;display:flex; justify-content: space-evenly;">
-                    <p>
-                        <a href="https://api.whatsapp.com/send?phone=+27(65)564-2667." target="_blank"> <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667 </a>
-                      </p><p>
-                        <a href="mailto:louisdegreat05@gmail.com" target="_blank"> <i class="fa fa-envelope my-float"></i> &nbsp;&nbsp; louisdegreat05@gmail.com </a>
-                    </p>
+                    <div style="font-size: 0.85em; width:100%; flex-direction: column;display:flex; justify-content: space-evenly;">
+                      <p class="button-container">
+                          <a href="tel:+27(65)564-2667" target="_blank" class="btn" style="font-weight: bold;"> <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667 </a>
+                      </p>
+                      <p class="button-container" style="width: 100%; align-items:center;">
+                          <a href="mailto:louisdegreat05@gmail.com" target="_blank" class="email-btn"> <i class="fa fa-envelope my-float"></i> &nbsp;&nbsp; louisdegreat05@gmail.com </a>
+                      </p>
                     </div>
                   </div>
                     <div class="footer-nav">
