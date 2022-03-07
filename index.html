@@ -490,7 +490,25 @@
 
             }
 
+            @media only screen and (max-width: 500px){
+              .header-back{
+                background-image: url("content/images/back.jpeg");
+                object-fit: cover;
+                background-position: center;
+              }
+            }
 
+            .shadow {
+                -webkit-filter: drop-shadow( 2px 2px 2px rgba(0, 0, 0, .7));
+                filter: drop-shadow( 2px 2px 2px rgba(0, 0, 0, .7));
+                -webkit-filter: drop-shadow( -3px 3px 2px rgba(0, 0, 0, .7));
+                filter: drop-shadow( -3px 3px 2px rgba(0, 0, 0, .7));
+              }
+
+            .opacity{
+              opacity: 0.3;
+              filter: alpha(opacity=30);
+            }
         </style>
         <div id="myModal" class="modal">
             <div class="modal-content">
@@ -516,20 +534,20 @@
             </div>
         </div>
         <div class="global-wrap">
-          <div id="big-logo" class="" style="">
+          <div id="big-logo" class="header-back" style="">
             <div class="" style="width: 60%;">
-              <a href="/"> <img src="content/images/2019/09/logo.svg" width="100%" alt="Louis de great" /></a>
+              <a href="/"> <img class="shadow" src="content/images/2019/09/logo.svg" width="100%" alt="Louis de great" /></a>
             </div>
             <div style="font-size: 0.95em; width:100%; flex-direction: column; display:flex; justify-content:center;">
-              <p class="button-container">
+              <p class="button-container" style="z-index:5">
                   <a href="tel:+27(65)564-2667" target="_blank" class="btn" style="font-weight: bold;"> <i class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 (65) 564-2667 </a>
               </p>
-              <p class="button-container" style="width: 100%; align-items:center;">
+              <p class="button-container shadow" style="width: 100%; align-items:center;"  style="z-index:5">
                   <a href="mailto:louisdegreat05@gmail.com" target="_blank" class="email-btn"> <i class="fa fa-envelope my-float"></i> &nbsp;&nbsp; louisdegreat05@gmail.com </a>
               </p>
             </div>
           </div>
-            <div class="section-content-wrap">
+            <div class="section-content-wrap" >
                 <div class="section-header wrap">
                     <header class="header-wrap flex">
                         <div class="header-logo" id="louis">
