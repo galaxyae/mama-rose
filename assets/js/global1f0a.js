@@ -46,3 +46,11 @@ if (search) {
       keys: [{name: 'title'}, {name: 'custom_excerpt'}, {name: 'excerpt'}, {name: 'plaintext'}]
   };
 }
+
+// custom setting for contact form
+document.querySelector('#contact-form').addEventListener('submit', (e) => {
+   e.preventDefault();
+   e.target.elements.name.value = '';
+   e.target.elements.email.value = '';
+   e.target.elements.message.value = '';
+ });
