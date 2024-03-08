@@ -471,7 +471,6 @@
             font-family: 'Jost';
             color: var(--secondary-color);
         }
-        }
 
         #success-msg {
             transition-delay: 3s;
@@ -592,7 +591,7 @@
                     <a href="tel:+27 65 6517241" target="_blank" class="btn" style="font-weight: bold;"> <i
                             class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 65 6517241 </a>
                 </p>
-                <p class="button-container shadow" style="width: 100%; align-items:center;" style="z-index:5">
+                <p class="button-container shadow" style="width: 100%; align-items:center; text-decoration: none;" style="z-index:5">
                     <a href="mailto:louisdegreat05@gmail.com" target="_blank" class="email-btn"> <i
                             class="fa fa-envelope my-float"></i> &nbsp;&nbsp; louisdegreat05@gmail.com </a>
                 </p>
@@ -606,12 +605,12 @@
                             <a href="/">
                                 <img src="content/images/2019/09/logo.svg" alt="Louis de great" /></a>
                             <div
-                                style="font-size: 0.95em; width:100%; flex-direction: column; display: flex; flex-direction:row; justify-content: center;">
-                                <p class="button-container" style="width:20vw;">
+                                style="font-size: 0.95em; width:100%; flex-direction: column; display: flex; flex-direction:column; justify-content: center;">
+                                <p class="button-container" style="width:100%;">
                                     <a href="tel:+27 65 6517241" target="_blank" class="btn"> <i
                                             class="fa fa-whatsapp my-float"></i> &nbsp;&nbsp; +27 65 6517241 </a>
                                 </p>
-                                <p style="width:20vw;">
+                                <p style="width:100%; text-decoration: none;">
                                     <a href="mailto:louisdegreat05@gmail.com" target="_blank"> <i
                                             class="fa fa-envelope my-float"></i> &nbsp;&nbsp; louisdegreat05@gmail.com
                                     </a>
@@ -1077,8 +1076,8 @@
             <style media="screen">
                 body {
                     width: 100%;
+                    overflow-x: hidden;
                     height: auto;
-                    /*     font-family: Dubai-Light; */
                 }
             </style>
             <div class="container">
@@ -1089,14 +1088,7 @@
                             <span id="left-arrow" class="arrow left fa fa-chevron-left"></span>
                             <ul id="testim-dots" class="dots">
                                 <li class="dot active"></li>
-                                <!--
-                                      -->
-                                <!-- <li class="dot"></li>
-
-                                      -->
-                                <!-- <li class="dot"></li> -->
-                                <!--
-                                    <li class="dot"></li> -->
+                                
                             </ul>
                             <div id="testim-content" class="cont">
                                 <div class="active">
@@ -1129,135 +1121,12 @@
                                         as a mother and wife.
                                     </p>
                                 </div>
-
-                                <!-- <div>
-                                        <div class="img"><img src="content/images/testim2.jpeg" alt="" /></div>
-                                        <h2>-</h2>
-                                        <p>-</p>
-                                    </div>
-
-                                    <div>
-                                        <div class="img"><img src="content/images/testim3.jpeg" alt="" /></div>
-                                        <h2>-</h2>
-                                        <p>-</p>
-                                    </div>
-
-                                    <div>
-                                        <div class="img"><img src="content/images/testim4.jpeg" alt="" /></div>
-                                        <h2>-</h2>
-                                        <p>-</p>
-                                    </div> -->
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
-            <!-- <script type="text/javascript">
-                    // vars
-                    "use strict";
-                    var testim = document.getElementById("testim"),
-                        testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
-                        testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
-                        testimLeftArrow = document.getElementById("left-arrow"),
-                        testimRightArrow = document.getElementById("right-arrow"),
-                        testimSpeed = 20000,
-                        currentSlide = 0,
-                        currentActive = 0,
-                        testimTimer,
-                        touchStartPos,
-                        touchEndPos,
-                        touchPosDiff,
-                        ignoreTouch = 30;
-                    window.onload = function () {
-                        // Testim Script
-                        function playSlide(slide) {
-                            for (var k = 0; k < testimDots.length; k++) {
-                                testimContent[k].classList.remove("active");
-                                testimContent[k].classList.remove("inactive");
-                                testimDots[k].classList.remove("active");
-                            }
-
-                            if (slide < 0) {
-                                slide = currentSlide = testimContent.length - 1;
-                            }
-
-                            if (slide > testimContent.length - 1) {
-                                slide = currentSlide = 0;
-                            }
-
-                            if (currentActive != currentSlide) {
-                                testimContent[currentActive].classList.add("inactive");
-                            }
-                            testimContent[slide].classList.add("active");
-                            testimDots[slide].classList.add("active");
-
-                            currentActive = currentSlide;
-
-                            clearTimeout(testimTimer);
-                            testimTimer = setTimeout(function () {
-                                playSlide((currentSlide += 1));
-                            }, testimSpeed);
-                        }
-
-                        testimLeftArrow.addEventListener("click", function () {
-                            playSlide((currentSlide -= 1));
-                        });
-
-                        testimRightArrow.addEventListener("click", function () {
-                            playSlide((currentSlide += 1));
-                        });
-
-                        for (var l = 0; l < testimDots.length; l++) {
-                            testimDots[l].addEventListener("click", function () {
-                                playSlide((currentSlide = testimDots.indexOf(this)));
-                            });
-                        }
-
-                        playSlide(currentSlide);
-
-                        // keyboard shortcuts
-                        document.addEventListener("keyup", function (e) {
-                            switch (e.keyCode) {
-                                case 37:
-                                    testimLeftArrow.click();
-                                    break;
-
-                                case 39:
-                                    testimRightArrow.click();
-                                    break;
-
-                                case 39:
-                                    testimRightArrow.click();
-                                    break;
-
-                                default:
-                                    break;
-                            }
-                        });
-
-                        testim.addEventListener("touchstart", function (e) {
-                            touchStartPos = e.changedTouches[0].clientX;
-                        });
-
-                        testim.addEventListener("touchend", function (e) {
-                            touchEndPos = e.changedTouches[0].clientX;
-
-                            touchPosDiff = touchStartPos - touchEndPos;
-
-                            console.log(touchPosDiff);
-                            console.log(touchStartPos);
-                            console.log(touchEndPos);
-
-                            if (touchPosDiff > 0 + ignoreTouch) {
-                                testimLeftArrow.click();
-                            } else if (touchPosDiff < 0 - ignoreTouch) {
-                                testimRightArrow.click();
-                            } else {
-                                return;
-                            }
-                        });
-                    };
-                </script> -->
+            
             <script src="https://use.fontawesome.com/1744f3f671.js"></script>
         </div>
         <!-- contact us form -->
@@ -1389,59 +1258,22 @@
         <div class="expired">Your link has expired</div>
         <div class="checkout-success">Success! Check your email for magic link to sign-in.</div>
     </div>
-
-    <div class="stars">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-    </div>
+    
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
     <div class="firefly"></div>
     <div class="firefly"></div>
     <div class="firefly"></div>
